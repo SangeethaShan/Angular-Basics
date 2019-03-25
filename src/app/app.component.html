@@ -1,20 +1,123 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<!-- <div style="text-align:center">
   <h1>
-    Welcome to {{ title }}!
+    Welcome  {{ name + 'Shan' }}!!
   </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+  <h2>
+    {{2+10}}
+  </h2>
+  <h3>
+    {{ name.length }}
+  </h3>
+  <h4>
+    {{ studentInfo | json }}
+  </h4>
+  <h5>
+    {{ name.toUpperCase() }}
+  </h5>
+  <h5>
+    {{ name.toLowerCase() }}
+  </h5>
+  <h5>
+    {{ myTestMethod() }}
+  </h5>
+  <h5>
+    {{ siteUrl }}
+  </h5>
+   <h2 [style.color]="'orange'">Welcome san!!</h2>
+   <h2 [style.color]="myTextColor">Welcome shan!!</h2>
+
+
+   <h2 [style.color]="hasErr ? 'red' : 'green'">Welcome sangeShan!!</h2>
+  <h2 [ngStyle]="titleStyles">Hello world!!</h2>
+  <button  class="btn btn-primary " (click)="myFunction($event)" >Greet here!</button><br/>
+  {{ greetText }} <br/>
+  <button  class="btn btn-primary " (click)="greetText='Welcome Vishwas'" >Greet here!</button><br/>
+  <input #myInput type="text"/><br/>
+  <button (click)="logMessage(myInput.value)" class="btn btn-default">Log</button><br/>
+   <button (click)="logInput(myInput)">Click here</button><br/> 
+   <input [(ngModel)]="myName" type="text"><br/>
+  {{myName}}
+  <h2 *ngIf="true">Codevolution!!</h2>
+  <h2 *ngIf="false">Codevolution!!</h2>
+    <div>
+    <h2 *ngIf="displayName; else elseBlock1">
+      Happy home!
+    </h2>
+    <ng-template #elseBlock1>
+      <h2>Name is hidden!!</h2>
+    </ng-template>
+
+    <div *ngIf="displayName; then thenBlock; else elseBlock"></div>
+    <ng-template #thenBlock>
+      <h3 class="text-success">This is Then Block!!</h3>
+    </ng-template>
+    <ng-template #elseBlock>
+      <h3 class="text-danger">This is Else Block!!</h3>
+    </ng-template>
+
+    <div [ngSwitch]="color">
+      <div *ngSwitchCase="'red'" class="text-danger">You have choosen red color!</div>
+      <div *ngSwitchCase="'green'" class="text-success">You have choosen green color!</div>
+      <div *ngSwitchCase="'blue'" class="text-primary">You have choosen blue color!</div>
+      <div *ngSwitchDefault class="text-warning">You did not pick the color.. Please select any color</div>
+    </div>
+
+    <h5 *ngFor="let color of colors; index as i;">
+      <p class="text-success">{{i}} {{color}}</p>
+    </h5>
+
+    <h5 *ngFor="let color of colors; first as f;">
+        <p class="text-danger">{{f}} {{color}}</p>
+      </h5>
+
+      <h5 *ngFor="let color of colors; last as l;">
+          <p class="text-success">{{l}} {{color}}</p>
+        </h5>
+
+        <h5 *ngFor="let color of colors; odd as o;">
+            <p class="text-warning">{{o}} {{color}}</p>
+          </h5>
+          <h5 *ngFor="let color of colors; even as e;">
+              <p class="text-success">{{e}} {{color}}</p>
+            </h5>
+
+    
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <form>
+        
+        
+        <input [type]="myText"  [placeholder]="myTextboxValue" class="form-control" /> <br/>
+
+        
+
+        <input bind-type="myText" [placeholder]="myTextboxValue" class="form-control" /> <br/>
+
+        <input [disabled]="true" [type]="myText" [placeholder]="myTextboxValue" class="form-control" /><br/>
+
+      </form>
+
+      <p [title]="myTitle" [class]="myClass">This is first paragraph!!</p> 
+      
+      <h1>{{message}}</h1>          
+
+    </div>
+    <div class="col-md-4">
+        <app-test [parentData]="firstName" (childEvent)="message=$event">
+        
+          </app-test>
+    </div>
+    <div class="col-md-4">
+        <app-emp-list></app-emp-list>
+    </div> 
+  </div>
+</div> -->
+<router-outlet></router-outlet>
+
+
+
+<a routerLinkActive="active" routerLink="emp-list">Employee List</a>  &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; <a routerLinkActive="active" routerLink="test">Test Component</a>
 

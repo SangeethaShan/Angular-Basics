@@ -1,0 +1,48 @@
+<p>
+  {{'Hello ' + name }}
+  <button class="btn btn-default" (click)="fireEvent()">Click here!</button> <br/>
+
+  
+</p>
+<h3>{{ myTestName | lowercase }}</h3>
+<p>{{ myTestName | uppercase }}</p>
+
+<h3>{{ myTestName | titlecase }}</h3>
+<h3>{{ myTestName | slice:3 }}</h3>
+<h3>{{ myTestName | slice:3:5 }}</h3>
+<p>{{ person | json }}</p>
+<p>{{ 5.678 | number: '1.2-3' }}</p>
+<p>{{ 5.678 | number: '3.4-5' }}</p>
+<p>{{ 5.678 | number: '3.1-2' }}</p>
+<p>{{ 0.25 | percent }}</p>
+<p>{{ 0.25 | currency }}</p>   <!-- default currency is $ -->
+<p>{{ 0.25 | currency: 'GBP' }}</p>  
+<p>{{ 0.25 | currency: 'GBP': 'code' }}</p>  
+
+<p>{{ date }}</p>  
+<p>{{ date | date: 'short'}}</p>  
+<p>{{ date | date: 'shortDate'}}</p>  
+<p>{{ date | date: 'shortTime'}}</p>  
+
+<p>{{ date | date: 'medium'}}</p>  
+<p>{{ date | date: 'mediumDate'}}</p>  
+<p>{{ date | date: 'mediumTime'}}</p>  
+
+<p>{{ date | date: 'long'}}</p>  
+<p>{{ date | date: 'longDate'}}</p>  
+<p>{{ date | date: 'longTime'}}</p>  
+
+
+
+<ul *ngFor="let employee of employeeList" class="list-group">
+    <li class="list-group-item"> {{ employee.id }}.{{ employee.name }}</li>
+    <li>San</li>
+  </ul>
+
+
+
+
+
+
+
+

@@ -1,0 +1,14 @@
+<h4>Welcome to Codevolution!</h4>
+
+<ul *ngFor="let employee of employeeList" class="list-group">
+  <li class="list-group-item"> {{ employee.id }}.{{ employee.name }} {{employee.age}} </li>
+</ul>
+
+
+<hr/>
+
+
+<a routerLink="emp-list">Employe List</a>
+
+<router-outlet></router-outlet>
+ 
